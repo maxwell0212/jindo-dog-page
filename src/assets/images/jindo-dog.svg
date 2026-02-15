@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="300" height="300">
+  <!-- 진돗개 몸통 -->
+  <ellipse cx="150" cy="180" rx="60" ry="45" fill="#f5e6d3" stroke="#d4a574" stroke-width="2"/>
+
+  <!-- 진돗개 머리 -->
+  <circle cx="150" cy="110" r="40" fill="#f5e6d3" stroke="#d4a574" stroke-width="2"/>
+
+  <!-- 진돗개 귀 (왼쪽) -->
+  <path d="M 125 85 Q 115 70 120 60 Q 125 65 130 75 Z" fill="#f5e6d3" stroke="#d4a574" stroke-width="2"/>
+
+  <!-- 진돗개 귀 (오른쪽) -->
+  <path d="M 175 85 Q 185 70 180 60 Q 175 65 170 75 Z" fill="#f5e6d3" stroke="#d4a574" stroke-width="2"/>
+
+  <!-- 진돗개 눈 (왼쪽) -->
+  <circle cx="138" cy="105" r="5" fill="#2c3e50"/>
+
+  <!-- 진돗개 눈 (오른쪽) -->
+  <circle cx="162" cy="105" r="5" fill="#2c3e50"/>
+
+  <!-- 진돗개 코 -->
+  <ellipse cx="150" cy="122" rx="6" ry="4" fill="#2c3e50"/>
+
+  <!-- 진돗개 입 -->
+  <path d="M 150 122 Q 145 128 140 126" stroke="#2c3e50" stroke-width="1.5" fill="none"/>
+  <path d="M 150 122 Q 155 128 160 126" stroke="#2c3e50" stroke-width="1.5" fill="none"/>
+
+  <!-- 앞다리 (왼쪽) -->
+  <rect x="125" y="205" width="12" height="40" rx="6" fill="#f5e6d3" stroke="#d4a574" stroke-width="2"/>
+
+  <!-- 앞다리 (오른쪽) -->
+  <rect x="163" y="205" width="12" height="40" rx="6" fill="#f5e6d3" stroke="#d4a574" stroke-width="2"/>
+
+  <!-- 뒷다리 (왼쪽) -->
+  <rect x="115" y="210" width="12" height="35" rx="6" fill="#f5e6d3" stroke="#d4a574" stroke-width="2"/>
+
+  <!-- 뒷다리 (오른쪽) -->
+  <rect x="173" y="210" width="12" height="35" rx="6" fill="#f5e6d3" stroke="#d4a574" stroke-width="2"/>
+
+  <!-- 꼬리 -->
+  <path d="M 90 165 Q 85 155 90 145 Q 95 150 95 160 Z" fill="#f5e6d3" stroke="#d4a574" stroke-width="2"/>
+
+  <!-- 목 연결 부분 -->
+  <ellipse cx="150" cy="145" rx="25" ry="20" fill="#f5e6d3" stroke="#d4a574" stroke-width="2"/>
+
+  <!-- 배 부분 강조 -->
+  <ellipse cx="150" cy="195" rx="40" ry="25" fill="#fff9f0" opacity="0.6"/>
+
+  <!-- 귀 안쪽 디테일 (왼쪽) -->
+  <path d="M 125 80 Q 120 72 122 68" fill="#e6d4bc" stroke="none"/>
+
+  <!-- 귀 안쪽 디테일 (오른쪽) -->
+  <path d="M 175 80 Q 180 72 178 68" fill="#e6d4bc" stroke="none"/>
+</svg>

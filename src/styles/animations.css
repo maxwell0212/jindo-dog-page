@@ -1,0 +1,249 @@
+.dancing-dog-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.dog-wrapper {
+  perspective: 1000px;
+  margin: 2rem 0;
+}
+
+.jindo-dog {
+  width: 250px;
+  height: 250px;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+  transition: filter 0.3s ease;
+}
+
+.jindo-dog:hover {
+  filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.4));
+}
+
+/* 춤추는 애니메이션 */
+.jindo-dog.dancing {
+  animation:
+    dance 2s ease-in-out infinite,
+    bounce 1s ease-in-out infinite,
+    rotate 3s ease-in-out infinite;
+}
+
+@keyframes dance {
+  0%, 100% {
+    transform: translateX(0) scale(1);
+  }
+  25% {
+    transform: translateX(-20px) scale(1.05);
+  }
+  50% {
+    transform: translateX(0) scale(0.95);
+  }
+  75% {
+    transform: translateX(20px) scale(1.05);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+}
+
+@keyframes rotate {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-5deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+}
+
+/* GPU 가속을 위한 최적화 */
+.jindo-dog {
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.control-button {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  padding: 1rem 2.5rem;
+  min-width: 200px;
+}
+
+.info-text {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.info-text p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.keyboard-hint {
+  font-size: 0.9rem !important;
+  opacity: 0.7;
+  margin-top: 0.5rem;
+}
+
+/* 추가 애니메이션 효과: 배경 입자 */
+.dancing-dog-container::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  animation: float 20s ease-in-out infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* 반응형 디자인 - 모바일 */
+@media (max-width: 768px) {
+  .dancing-dog-container {
+    padding: 1rem;
+  }
+
+  .jindo-dog {
+    width: 180px;
+    height: 180px;
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .control-button {
+    font-size: 1rem;
+    padding: 0.8rem 2rem;
+    min-width: 160px;
+  }
+
+  .info-text p {
+    font-size: 0.95rem;
+  }
+
+  @keyframes dance {
+    0%, 100% {
+      transform: translateX(0) scale(1);
+    }
+    25% {
+      transform: translateX(-15px) scale(1.05);
+    }
+    50% {
+      transform: translateX(0) scale(0.95);
+    }
+    75% {
+      transform: translateX(15px) scale(1.05);
+    }
+  }
+
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+}
+
+/* 반응형 디자인 - 태블릿 */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .jindo-dog {
+    width: 220px;
+    height: 220px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .control-button {
+    font-size: 1.1rem;
+    padding: 0.9rem 2.2rem;
+  }
+}
+
+/* 반응형 디자인 - 대형 데스크탑 */
+@media (min-width: 1440px) {
+  .jindo-dog {
+    width: 300px;
+    height: 300px;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  .control-button {
+    font-size: 1.3rem;
+    padding: 1.2rem 3rem;
+    min-width: 240px;
+  }
+
+  @keyframes dance {
+    0%, 100% {
+      transform: translateX(0) scale(1);
+    }
+    25% {
+      transform: translateX(-30px) scale(1.05);
+    }
+    50% {
+      transform: translateX(0) scale(0.95);
+    }
+    75% {
+      transform: translateX(30px) scale(1.05);
+    }
+  }
+
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-40px);
+    }
+  }
+}
+
+/* 터치 인터페이스 최적화 */
+@media (hover: none) and (pointer: coarse) {
+  .control-button {
+    padding: 1.2rem 2.5rem;
+    font-size: 1.2rem;
+    min-height: 60px;
+  }
+
+  .jindo-dog:active {
+    transform: scale(0.98);
+  }
+}
